@@ -1,18 +1,20 @@
 import React from "react";
-
-import Login from "./pages/Login";
+import { BrowserRouter } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
 import GlobalStyles from "./styles/GlobalStyles";
 import Header from "./components/Header";
-
+import AppRoutes from "./routes";
 
 
 function App() {
-    return <>
+    return (
+        <BrowserRouter>
             <Header />
-            <Login />
+            <AppRoutes />
             <GlobalStyles/>
-        </>
-    ;
+            <ToastContainer autoClose={3000} className="toast-container" />
+        </BrowserRouter>
+    )
 }
 
 export default App;
